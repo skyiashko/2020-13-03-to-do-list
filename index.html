@@ -2,17 +2,71 @@
 <html>
 	<head>
 		<title>practice</title>
-		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-		<link href="style.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">	
+		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<link href="style.css" rel="stylesheet">		
 	<head>
 	<body>
-		<div class="page-header">
-			<h1>List to do on friday</h1>
-		</div>
 		<div class="container">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eligendi, libero iusto ducimus modi, voluptas exercitationem laudantium animi deleniti perferendis, est omnis fugiat ab quas itaque, quasi maiores consequatur autem.
+		<div class="page-header">
+			<h1>Scary Friday to-do list</h1>
 		</div>
+
+		<div class="text-right">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddTask">Add new task <i class="glyphicon glyphicon-plus"></i></button>
+		</div>
+
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="active"><a href="#todo" data-toggle="tab">To do</a></li>
+			<li><a href="#inprogress" data-toggle="tab">In progress</a></li>
+			<li><a href="#done" data-toggle="tab">Done</a></li>
+		</ul>
+
+		<div class="tab-content" id="tasks-list">
+			<div role="tabpanel" class="tab-pane active" id="tab1">
+				<ul class="list-group" data-status="1">
+				</ul>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" id="tab2">
+				<ul class="list-group" data-status="2"></ul>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" id="tab3">
+				<ul class="list-group" data-status="3"></ul>
+			</div>
+		</div>
+
+		</div>
+
+		<!-- Modal -->
+<div class="modal fade" id="modalAddTask" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title">Add task</h4>
+			</div>
+
+			<div class="modal-body">
+				<form id="formAddTask">
+					<div class="form-group">
+						<input type="text" name="title" placeholder="Title" autofocus="true" class="form-control">
+					</div>
+				</form>
+			</div>
+
+			<div class="modal-footer">
+				<button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+				<button class="btn btn-success" form="formAddTask">Ok</button>
+			</div>
+		</div>
+	</div>
+</div>
+		<script src="functions.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>
