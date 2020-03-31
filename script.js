@@ -17,7 +17,7 @@ $formAddTask.on('submit', function(event) {
 
     $modalAddTask.modal('hide');
 
-    this.reset(); //метод у формы, чтобы сбросить все значения полей по умолчанию
+    this.reset();
     
     countStatistics();
 });
@@ -34,5 +34,4 @@ for (let key in localStorage) {
 }
 
 const $removeBtn = $('#removealltask');
-
 $removeBtn.on('click',  removeAllTask);

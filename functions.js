@@ -4,14 +4,12 @@ function addTask(id, task) {
     $tasksList
         .find(`[data-status="${task.status}"]`)
         .append($taskItem);
-
-    countStatistics();
+        countStatistics();
 }
 
 function removeAllTask () {    
         localStorage.clear();
         $('[data-status]').find('li').remove(); 
-          
         countStatistics();
     }
 
@@ -25,7 +23,6 @@ function countStatistics() {
      for (let key in localStorage) {
         if (localStorage.hasOwnProperty(key)) {
             const task = JSON.parse(localStorage[key]);
-
             taskCounts[task.status]++;
         }
      }
