@@ -37,3 +37,4 @@ $('body').on('click', '.btn-delete', function(event) {
 	localStorage.removeItem(taskId);
 
 });
+
