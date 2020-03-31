@@ -1,6 +1,7 @@
 const $formAddTask = $('#formAddTask');
 const $tasksList = $('#tasks-list');
 const $modalAddTask = $('#modalAddTask');
+const $removeBtn = $('#removealltask');
 
 $formAddTask.on('submit', function(event) {
     event.preventDefault();
@@ -33,5 +34,4 @@ for (let key in localStorage) {
     countStatistics();
 }
 
-const $removeBtn = $('#removealltask');
 $removeBtn.on('click',  removeAllTask);
